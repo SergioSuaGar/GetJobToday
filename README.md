@@ -1,4 +1,10 @@
-# appgetjobtoday
+# GetJobtoday
+
+Web Freelance para publicar proyectos o realizar proyectos que han sido publicados por otros usuarios.
+
+### Proyecto final | Grado Superior Desarrollo de Aplicaciones Web.
+
+Realizado principalmente con Vue, Firebase, Javascript, HTML, CSS y Bootstrap.
 
 ## Project setup
 ```
