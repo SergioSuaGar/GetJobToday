@@ -99,6 +99,7 @@
                 arrayUsuarios: [],
                 usuarioOn: '',
                 keyUsuario: '',
+                rol:'',
             }
         },
         methods: {
@@ -113,6 +114,7 @@
                     tecnologias: this.tecnologiasModel,
                     biografia: this.bioModel,
                     pais: this.paisModel,
+                    rol:this.rol,
                 })
             },
             actualizarPerfilPublico: function () {
@@ -125,6 +127,7 @@
                     tecnologias: this.tecnologiasModel,
                     biografia: this.bioModel,
                     pais: this.paisModel,
+                    rol: this.rol,
                 })
             },
             miUsuario: function (users) {
@@ -159,6 +162,7 @@
                     this.paisModel=this.arrayUsuarios[i].pais;
                     this.tecnologiasModel=this.arrayUsuarios[i].tecnologias;
                     this.bioModel=this.arrayUsuarios[i].biografia;
+                    this.rol=this.arrayUsuarios[i].rol;
                 }
             }
         },

@@ -9,6 +9,8 @@ import Perfil from './views/PerfilView'
 import PerfilPublico from './views/PerfilPublicoView'
 import Chat from './views/ChatView'
 import Home from './views/HomeView'
+import AdminUsuarios from './views/AdminUsuariosView'
+import AdminPublicaciones from './views/AdminPublicacionesView'
 
 
 Vue.use(Router);
@@ -18,8 +20,8 @@ export default new Router({
     routes: [
         {
             path: '/',
-            name: 'Explora',
-            component: Explora
+            name: 'Login',
+            component: Login
         },
         {
             path: '/login',
@@ -65,6 +67,16 @@ export default new Router({
             path: '/perfil',
             name: 'Perfil',
             component: Perfil
+        },
+        {
+            path: '/adminusuarios',
+            name: 'AdminUsuarios',
+            component: AdminUsuarios
+        },
+        {
+            path: '/adminpublicaciones',
+            name: 'AdminPublicaciones',
+            component: AdminPublicaciones
         },
         {
             path: '/*',

@@ -21,7 +21,7 @@
                                 </div>
                             </div>
                             <div class="footer text-center">
-                                <input v-model="mensajeModel" type="text"/>
+                                <input v-model="mensajeModel" type="text" class="form-control col-11 ml-1" v-on:keypress.enter="enviarMensaje(mensajeModel)"/>
                                 <a v-on:click="enviarMensaje(mensajeModel)" class="btn btn-rose btn-link btn-wd btn-lg">Enviar</a>
                             </div>
                         </div>
@@ -133,6 +133,7 @@
                         });
                     }
                 }
+                this.mensajeModel='';
             },
             FunctChats: function (val) {
                 this.arrayTodosChat = [];

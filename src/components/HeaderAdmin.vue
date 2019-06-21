@@ -1,6 +1,6 @@
 <template>
-    <div id="cabecera" class="sidebar-collapse">
-        <nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg bg-rose">
+    <div class="sidebar-collapse">
+        <nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg bg-rose" color-on-scroll="100" id="sectionsNav">
             <div class="container">
                 <div class="navbar-translate">
                     <a class="navbar-brand" href="#">
@@ -12,22 +12,16 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
-                <div class="collapse navbar-collapse ">
+                <div class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <router-link to="/explora" class="router nav-link ">Explora</router-link>
+                            <router-link to="/adminusuarios" class="router nav-link">Usuarios</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link to="/mispublicaciones" class="router nav-link">Mis Publicaciones</router-link>
+                            <router-link to="/adminpublicaciones" class="router nav-link">Publicaciones</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link to="/trabajoactual" class="router nav-link">Trabajo Actual</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link to="/perfil" class="router nav-link">Mi Perfil</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link to="/login" class="router nav-link" >Salir</router-link>
+                            <router-link to="/login" class="router nav-link">Salir</router-link>
                         </li>
                     </ul>
                 </div>
@@ -38,12 +32,10 @@
 
 <script>
     export default {
-        name: "HeaderIn"
+        name: "HeaderAdmin"
     }
 </script>
 
 <style scoped>
-    #cabecera{
 
-    }
 </style>

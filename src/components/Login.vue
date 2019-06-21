@@ -10,7 +10,7 @@
                             </div>
                             <div class="text-center">
                                 <router-link to="/register" class="router"><p class="description">¿Aún no estás registrado?</p></router-link>
-                                <label id="campoErroneo"></label>
+                                <label id="campoErroneo">{{this.avisoCredenciales}}</label>
                             </div>
 
                             <div class="card-body">
@@ -53,7 +53,8 @@
             return {
                 usuarioModel: '',
                 contrasenaModel: '',
-                arrayUsuarios: []
+                arrayUsuarios: [],
+                avisoCredenciales:'',
             }
         },
         components: {},
@@ -73,10 +74,15 @@
             IniciarSesion: function () {
                 for (let i = 0; i < this.arrayUsuarios.length; i++) {
                     if (this.arrayUsuarios[i].user === this.usuarioModel && this.arrayUsuarios[i].password === this.contrasenaModel) {
-                        localStorage.setItem('usuario', this.usuarioModel);
-                        this.$router.push('/explora');
+                        if(this.usuarioModel==='admin'){
+                            localStorage.setItem('usuario', this.usuarioModel);
+                            this.$router.push('/adminusuarios');
+                        }else {
+                            localStorage.setItem('usuario', this.usuarioModel);
+                            this.$router.push('/explora');
+                        }
                     }else{
-                        document.getElementById("campoErroneo").innerHTML="Usuario y contraseña incorrectos";
+                        this.avisoCredenciales="Usuario y contraseña incorrectos";
                     }
                 }
             }
