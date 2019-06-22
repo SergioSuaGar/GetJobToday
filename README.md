@@ -6,6 +6,10 @@ Web Freelance para publicar proyectos o realizar proyectos que han sido publicad
 
 Realizado principalmente con Vue, Firebase, Javascript, HTML, CSS y Bootstrap.
 
+### Live Preview
+
+https://getjobtoday.netlify.com/
+
 ## Project setup
 ```
 npm install
