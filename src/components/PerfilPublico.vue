@@ -8,18 +8,13 @@
                     </div>
                     <div class="card-body">
                         <div class="input-group">
-                            <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                        <i class="material-icons">face</i>
-                                    </span>
-                            </div>
                             <input type="text" class="form-control" placeholder="Nombre..."
                                    v-model="nombreModel" disabled="disabled">
                             <input type="text" class="form-control" placeholder="Apellido..."
                                    v-model="apellidoModel" disabled="disabled">
                         </div>
                         <div class="input-group">
-                            Pais: <country-select v-model="paisModel" :country="paisModel" topCountry="ES" disabled="disabled"></country-select>
+                            <country-select v-model="paisModel" :country="paisModel" topCountry="ES" disabled="disabled"></country-select>
                         </div>
                         <div class="input-group">
                             <input type="text" class="form-control"
@@ -30,7 +25,6 @@
                                 <textarea class="form-control" rows="5" v-model="bioModel"
                                           placeholder="Sobre mi..." disabled="disabled"></textarea>
                         </div>
-
                     </div>
                     <div class="footer text-center">
                         <router-link :to="'/mispublicaciones/'">
@@ -58,26 +52,18 @@
             }
         },
         methods:{
-            infoUsuario: function (users) {
+            infoUsuario: function (ususario) {
                 this.arrayUsuarios = [];
-                for (let key in users) {
-                    if (users[key].user === this.usuarioOn) {
-                        this.arrayUsuarios.push({
-                            idUsuario: key,
-                            nombre: users[key].nombre,
-                            apellido: users[key].apellido,
-                            pais: users[key].pais,
-                            tecnologias: users[key].tecnologias,
-                            biografia: users[key].biografia,
-                        });
-                        this.keyUsuario=key;
-                    }
-
-                }
-                console.log(this.arrayUsuarios)
-                this.rellenarPerfiles()
+                this.arrayUsuarios.push({
+                    nombre: ususario.nombre,
+                    apellido: ususario.apellido,
+                    pais: ususario.pais,
+                    tecnologias: ususario.tecnologias,
+                    biografia: ususario.biografia,
+                });
+                this.rellenarPerfil();
             },
-            rellenarPerfiles: function () {
+            rellenarPerfil: function () {
                 for (let i=0;i<this.arrayUsuarios.length;i++){
                     this.nombreModel=this.arrayUsuarios[i].nombre;
                     this.apellidoModel=this.arrayUsuarios[i].apellido;
@@ -88,7 +74,7 @@
             }
         },
         mounted(){
-            firebase.database().ref('usuarios/').on('value', snapshots => this.infoUsuario(snapshots.val()));
+            firebase.database().ref('usuarios/' + this.$route.params.id).on('value', snapshots => this.infoUsuario(snapshots.val()));
         }
     }
 </script>

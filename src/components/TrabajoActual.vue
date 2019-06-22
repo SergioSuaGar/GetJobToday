@@ -162,12 +162,6 @@
                     }
                 }
             },
-            Completar: function () {
-
-            },
-            abrirChat: function () {
-
-            },
         },
         mounted() {
             firebase.database().ref('usuarios/').on('value', snapshots => this.listarUsuarios(snapshots.val()));

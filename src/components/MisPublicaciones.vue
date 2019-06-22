@@ -6,7 +6,7 @@
                     Proyecto
                 </button>
                 <div v-for="item in arrayProyectos" v-bind:key="item.id" class="col-12">
-                    <div class="card card-nav-tabs text-center cardProyecto col-lg-8 col-md-8 ml-auto mr-auto">
+                    <div class="card card-nav-tabs text-center cardProyecto col-lg-10 col-md-10 ml-auto mr-auto">
                         <div class="card-header card-header-rose">
                             {{item.titulo}}
                         </div>
@@ -14,13 +14,14 @@
                             <p class="card-text">Tecnologías necesarias: {{item.lenguaje}}</p>
                         </div>
                         <div class="card-footer text-muted row">
-                            <button v-on:click="editarProyecto(item.id)" class="btn btn-rose col-md-3" data-toggle="modal"
+                            <button v-on:click="editarProyecto(item.id)" class="btn btn-rose col-md-2" data-toggle="modal"
                                     data-target="#editar">Editar
                             </button>
                             <button v-on:click="deleteProyecto(item.id)" class="btn btn-rose col-md-3">Eliminar</button>
-                            <button v-on:click="verInteresados(item.id)" class="btn btn-rose col-md-5" data-toggle="modal"
+                            <button v-on:click="verInteresados(item.id)" class="btn btn-rose col-md-4" data-toggle="modal"
                                     data-target="#interesados">Ver interesados
                             </button>
+                            <button type="button" class="btn btn-rose col-md-2" id="chatBoton"><router-link :to="'/Chat/' + item.id">Chat</router-link></button>
                         </div>
                     </div>
                 </div>
@@ -147,7 +148,7 @@
                                     <p class="card-text">Tecnologías conocidas: {{usuario.lenguaje}}</p>
                                 </div>
                                 <div class="card-footer text-muted row">
-                                    <router-link :to="'/PerfilPublico/' + usuario.user" class="col-md-6">
+                                    <router-link :to="'/PerfilPublico/' + usuario.interesado" class="col-md-6">
                                         <button class="btn btn-rose" data-dismiss="modal">Perfil</button>
                                     </router-link>
                                     <button v-on:click="asignarProyecto(usuario.interesado, usuario.idProyecto)" class="btn btn-rose col-md-5">
@@ -270,7 +271,7 @@
                 for (let i = 0; i < this.arrayInteresados; i++) {
                     for (let j = 0; j < this.arrayUsuarios; j++) {
                         if (this.arrayInteresados[i].interesado === this.arrayUsuarios[j].id) {
-                            console.log('lelelelele');
+                            console.log('');
                         }
                     }
                 }
@@ -319,5 +320,8 @@
 
     #fondo {
         background-image: url("../assets/img/city.jpg");
+    }
+    a{
+        color:white;
     }
 </style>
