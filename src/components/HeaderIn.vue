@@ -43,7 +43,6 @@
 </script>
 
 <style scoped>
-    #cabecera{
-
+    #cabecera {
     }
 </style>

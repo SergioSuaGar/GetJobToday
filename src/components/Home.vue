@@ -102,4 +102,7 @@
     .page-header{
         background-image: url('../assets/img/profile_city.jpg');
     }
+    .main{
+        margin-bottom: 80px;
+    }
 </style>

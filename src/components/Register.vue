@@ -98,6 +98,11 @@
                         email: this.emailModel,
                         password: this.contrasenaModel,
                         rol: 'trabajador',
+                        nombre: '',
+                        apellido:'',
+                        pais:'',
+                        tecnologias:'',
+                        biografia:''
                     }).then(() => {
                         this.usuarioModel = '';
                         this.emailModel = '';

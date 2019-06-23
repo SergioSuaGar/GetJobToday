@@ -122,7 +122,6 @@
                             autor: this.arrayTRUEXD[i].user,
                             idAutor: this.arrayTRUEXD[i].idUsuario
                         });
-                        //break;
                     }
                 }
                 for (let j = 0; j < this.arrayProyectos.length; j++) {

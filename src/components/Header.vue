@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar-collapse">
+    <div class="sidebar-collapse" id="cabecera">
         <nav class="navbar navbar-color-on-scroll fixed-top navbar-expand-lg bg-rose" color-on-scroll="100" id="sectionsNav">
             <div class="container">
                 <div class="navbar-translate">
