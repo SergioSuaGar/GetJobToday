@@ -152,7 +152,6 @@
                 }
             },
             estoyInteresado: function (id) {
-                //console.log(this.keyRegistrado);
                 firebase.database().ref('proyectos/' + id + '/interesados/').push({
                     interesado: this.keyRegistrado,
                     user: this.usuarioOn,

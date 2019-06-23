@@ -45,7 +45,7 @@
                 idSeleccionado: '',
                 arrayUsuarioSeleccionado: [],
                 arrayTRUEXD: [],
-                mensajeModel: '',
+                mensajeModel:"",
                 usuarioOn: '',
                 arrayTodosChat: []
             }
@@ -114,6 +114,7 @@
 
             },
             enviarMensaje: function (mensajeModel) {
+                this.mensajeModel="";
                 this.usuarioOn = localStorage.getItem('usuario');
                 for (let i = 0; i < this.arrayTRUEXD.length; i++) {
                     if (this.arrayTRUEXD[i].user === this.usuarioOn) {
@@ -132,7 +133,6 @@
                         });
                     }
                 }
-                this.mensajeModel='';
             },
             FunctChats: function (val) {
                 this.arrayTodosChat = [];
